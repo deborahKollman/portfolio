@@ -1,0 +1,15 @@
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    div{
+        display:flex;
+        flex-direction: row;
+        justify-items: space-around;
+
+        .MuiDivider-vertical{
+            border-color: white;
+        }
+    }
+}
