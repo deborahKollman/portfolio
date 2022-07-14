@@ -2,14 +2,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: #002790;
 
     div{
         display:flex;
         flex-direction: row;
         justify-items: space-around;
-
+        margin-left: 2vh;
+        margin-right: 2vh;
         .MuiDivider-vertical{
-            border-color: white;
+            border-color:white;
+            margin-top: 0%;
+            margin-bottom: 0%;
         }
     }
 }

@@ -1,12 +1,20 @@
 import * as React from 'react';
 import './App.css';
+import { Toolbar } from '@mui/material'
 import ScrollToTop from './components/ScrollTop';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
+import About from './components/About';
+import Proyect from './components/Proyects';
+import Skills from './components/Skills';
 
 function App() {
   return (
     <React.Fragment>
-      <NavBar id="back-to-top-anchor" />
+      <NavBar/>
+      <Toolbar id="back-to-top-anchor"/>
+      <About/>
+      <Proyect/>
+      <Skills/>
       <ScrollToTop/>
     </React.Fragment>
     // <div className="App">
