@@ -1,13 +1,38 @@
 .proyects{
-    background-image: linear-gradient(#2972b6,#4ebcff);
-    padding: 15vh;
-    margin-top:10vh;
+    background-image: linear-gradient(white,lightgrey);
+    padding: 10vh 15vh 15vh 5vh;
+    font-weight: bold;
     h1{
         font-size: 10vh;
-        color:white;
         text-align: center;
+        margin-bottom: 10vh;
+        background-image: linear-gradient(#2972b6,#4ebcff);
+        background-clip: text;
+        color: transparent;
     }
+}
+
+.proyect_div{
+    display:flex;
+    flex-direction: row-reverse;
+    margin-top:15vh;
+    margin-bottom: 15vh;
+}
+
+.proyect_detail{
+    width: 60%;
     h2{
-        margin-top: 5vh;
+        font-size: 6vh;
+    }
+    a{
+        text-decoration: none;
+        margin-left: 5vh;
+
+        .MuiButton-root{
+            background-color: #2972b6;
+        }
+        .MuiButton-root:hover{
+            background-color: #4ebcff;
+        }
     }
 }

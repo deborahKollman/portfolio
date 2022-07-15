@@ -26,19 +26,20 @@ function HideOnScroll(props) {
 
 
 export default function NavBar(props) {
+  
   return (
     <React.Fragment>
       <HideOnScroll {...props}>
         <AppBar>
           <Toolbar className='nav-bar'>
             <div>
-                <div>Home</div>
+                <a href='#back-to-top-anchor'>Home</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
-                <div>Proyectos</div>
+                <a href='#proyects'>Proyectos</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
-                <div>Habilidades</div>
+                <a href='#skills'>Habilidades</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
-                <div>Contacto</div>
+                <a href='#contact'>Contacto</a>
             </div>
             <div>
                 <div>Light Dark mode</div>

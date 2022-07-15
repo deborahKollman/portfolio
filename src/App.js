@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import About from './components/About';
 import Proyect from './components/Proyects';
 import Skills from './components/Skills';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <About/>
       <Proyect/>
       <Skills/>
+      <Contact/>
       <ScrollToTop/>
     </React.Fragment>
     // <div className="App">
