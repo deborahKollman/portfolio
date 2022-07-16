@@ -9,20 +9,62 @@
         background-image: linear-gradient(#2972b6,#4ebcff);
         background-clip: text;
         color: transparent;
+
+        @media screen and (max-width:770px) {
+            font-size: 7vh;
+            margin-bottom: 5vh;
+        }
+        @media screen and (max-width:480px) {
+            font-size: 4vh;
+        }
+    }
+    .MuiCard-root{
+        margin-bottom: 5vh;
+    }
+    @media screen and (max-width:770px) {
+        padding: 8vh;
+    }
+    @media screen and (max-width:480px) {
+        padding-left: 5vh;
+        padding-right: 5vh;
     }
 }
 
 .proyect_div{
     display:flex;
     flex-direction: row-reverse;
-    margin-top:15vh;
-    margin-bottom: 15vh;
+    margin-top:5vh;
+    margin-bottom: 5vh;
+    align-items: center;
+    img{
+        display: none;
+        @media screen and (max-width:770px) {
+            display: flex;
+            width: 100vh;
+            border-radius: 10px;
+        }
+        @media screen and (max-width:480px) {
+            width: 60vh;
+        }
+    }
+
+    @media screen and (max-width:770px){
+        margin: 1vh;
+        flex-direction: column;
+    }
 }
 
 .proyect_detail{
     width: 60%;
     h2{
         font-size: 6vh;
+
+        @media screen and (max-width:770px) {
+            font-size: 4vh;
+        }
+        @media screen and (max-width:480px) {
+            font-size: 3vh;
+        }
     }
     a{
         text-decoration: none;
@@ -30,9 +72,29 @@
 
         .MuiButton-root{
             background-color: #2972b6;
+            @media screen and (max-width:770px) {
+                font-size: 2vh;
+                margin-top:1vh;
+                margin-left: 0%;
+            }
+            
         }
         .MuiButton-root:hover{
             background-color: #4ebcff;
+            @media screen and (max-width:480px) {
+                font-size: 2vh;
+                margin-top:1vh;
+                margin-left: 0%;
+            }
         }
+    }
+
+    @media screen and (max-width:770px){
+        width:100%;
+        font-size: 2vh;
+        padding: 10vh ;
+    }
+    @media screen and (max-width:480px){
+        padding: 2vh ;
     }
 }

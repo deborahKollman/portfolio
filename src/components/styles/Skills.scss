@@ -3,11 +3,22 @@
     padding: 15vh;
     color:white;
     font-weight: bold;
-    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content:space-between;
+    justify-content:space-evenly;
     h1{
         font-size: 10vh;
         margin: 0%;
         text-align: center;
+
+        @media screen and (max-width:770px){
+            font-size: 7vh;
+        }
+        @media screen and (max-width:480px) {
+            font-size: 6vh;
+        }
     }
     .icons{
         display: flex;
@@ -16,6 +27,26 @@
 
         img{
             padding: 5vh;
+
+            @media screen and (max-width:770px) {
+                width: 120px;
+                padding: 3vh;
+            }
+            @media screen and (max-width:770px) {
+                width: 100px;
+                padding: 2vh;
+            }
         }
+        
+        @media screen and (max-width:770px){
+            padding: 5vh;
+        }
+    }
+
+    @media screen and (max-width:770px) {
+        padding: 10vh;
+    }
+    @media screen and (max-width:480px) {
+        padding: 5vh;
     }
 }

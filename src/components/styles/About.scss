@@ -1,18 +1,73 @@
 .about{
     background-image: linear-gradient(#2972b6,#4ebcff);
     padding: 15vh;
-    padding-top:20vh;
     color:white;
     font-weight: bold;
-    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-content: center;
     h1{
-        font-size: 10vh;
-        margin: 0%;
+        font-size: 12vh;
+        padding-bottom: 1vh;
+        color: white;
+        text-shadow: 2px 2px 2px #001d4f;
+
+        @media screen and (max-width:480px) {
+            font-size: 6vh;
+        }
     }
     h2{
-        color: lightgrey;
+        color: #001d4f;
+        @media screen and (max-width:480px) {
+            font-size: 4vh;
+        }
     }
-    h4{
+    
+    h5{
         margin-top: 10vh;
+        margin-bottom: 5vh;
+
+        @media screen and (max-width:770px){
+            font-size: 3vh;
+        }
+        @media screen and (max-width:480px) {
+            font-size: 1,5vh;
+        }
+    }
+
+    .info{
+        display: flex;
+
+        a{
+            text-decoration: none;
+            margin-left: 5vh;
+    
+            .MuiButton-root{
+                background-color: #001d4f;
+                @media screen and (max-width:770px) {
+                    font-size: 4vh;
+                }
+                @media screen and (max-width:480px) {
+                    font-size: 2vh;
+                }
+            }
+            .MuiButton-root:hover{
+                background-color: #0027b6;
+                @media screen and (max-width:770px) {
+                    font-size: 4vh;
+                }
+                @media screen and (max-width:480px) {
+                    font-size: 2vh;
+                }
+            }
+
+            
+        }
+    }
+
+    @media screen and (max-width:480px) {
+        padding-left: 5vh;
+        padding-right: 5vh;
     }
 }

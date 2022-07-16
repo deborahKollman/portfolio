@@ -42,9 +42,9 @@ export default function NavBar(props) {
                 <a href='#contact'>Contacto</a>
             </div>
             <div>
-                <div>Light Dark mode</div>
+                {/* <div>Light Dark mode</div>
                 <Divider orientation="vertical" flexItem />
-                <div>Lenguaje</div>
+                <div>Lenguaje</div> */}
             </div>
           </Toolbar>
         </AppBar>

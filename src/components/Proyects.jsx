@@ -1,8 +1,11 @@
 import * as React from 'react';
-import { Button } from '@mui/material';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ForwardIcon from '@mui/icons-material/Forward';
 import ImageCarousel from './sub-components/ImageCarousel';
+
 import './styles/Proyects.scss';
 
 
@@ -15,7 +18,9 @@ export default function About() {
     <React.Fragment>
       <div className='proyects' maxWidth='xl' id='proyects'>
         <h1>Proyectos</h1>
+        <Card><CardContent>
         <div className='proyect_div'>
+        <img src={require('../img/vg_landing.png')} alt="VideogamesApp"/>
         <div className='proyect_detail'>
           <h2>Videogames App</h2>
           <p>Proyecto individual creado para el bootcamp Henry.
@@ -41,7 +46,10 @@ export default function About() {
         </div>
         <ImageCarousel images={videogames}/>
         </div>
+        </CardContent></Card>
+        <Card><CardContent>
         <div className='proyect_div'>
+        <img src={require('../img/se_landing.png')} alt="ServiExpressApp"/>
         <div className='proyect_detail'>
           <h2>ServiExpress</h2>
           <p>Proyecto final grupal para el bootcamp Henry.
@@ -69,6 +77,7 @@ export default function About() {
         </div>
         <ImageCarousel images={serviexpress}/>
         </div>
+        </CardContent></Card>
       </div>
     </React.Fragment>
   );
