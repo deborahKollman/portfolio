@@ -5,23 +5,25 @@ import CardContent from '@mui/material/CardContent';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ForwardIcon from '@mui/icons-material/Forward';
 import ImageCarousel from './sub-components/ImageCarousel';
-
+import { useSelector } from 'react-redux';
 import './styles/Proyects.scss';
 
 
 export default function About() {
-  // '../../img/'
   const videogames = [{url:require('../img/vg_landing.png'),alt:'Landing page'},{url:require('../img/vg_search.png'),alt:'Search, filter, order'},{url:require('../img/vg_detail.png'),alt:'Videogame detail page'},{url:require('../img/vg_create.png'),alt:'Create videogame'}];
   const serviexpress = [{url:require('../img/se_landing.png'),alt:'Landing page'},{url:require('../img/se_home.png'),alt:'Homepage'},{url:require('../img/se_detail.png'),alt:'Publication page'},{url:require('../img/se_order.png'),alt:'Order page'}];
   
+  const language = useSelector((state)=>state.language)
+
   return (
     <React.Fragment>
       <div className='proyects' maxWidth='xl' id='proyects'>
-        <h1>Proyectos</h1>
+        {language==="ES"?(<h1>Proyectos</h1>):<h1>Proyects</h1>}
         <Card><CardContent>
         <div className='proyect_div'>
-        <img src={require('../img/vg_landing.png')} alt="VideogamesApp"/>
+        <img src={require('../img/vg_landing.png')} alt="VideogamesApp" className="proyect_image"/>
         <div className='proyect_detail'>
+          {language==="ES"?(<div>
           <h2>Videogames App</h2>
           <p>Proyecto individual creado para el bootcamp Henry.
           <br/> Esta SPA (Single Page Application) permite visualizar videojuegos e interactuar con ellos, incluyendo:
@@ -33,14 +35,27 @@ export default function About() {
             <li>Visualizar detalles de cada videojuego,</li>
             <li>Crear videojuegos para poder ser visualizados en la pagina.</li>
           </ul>
+          </div>):(<div>
+            <h2>Videogames App</h2>
+          <p>Individual project made for the Henry bootcamp.
+          <br/> This SPA (Single Page Application) allows viewing videogames and interacting with them, including:
+          </p>
+          <ul>
+            <li>Filter by gender and type (created or preexisting),</li>
+            <li>Order by name or rating,</li>
+            <li>Search by name,</li>
+            <li>Visualize details of each videogame,</li>
+            <li>Create videogames to be seen in the page.</li>
+          </ul>
+          </div>)}
           <a href='https://github.com/deborahKollman/Videogames_PI'>
             <Button variant="contained" startIcon={<GitHubIcon/>}>
-              Repositorio
+              {language==="ES"?("Repositorio"):("Repository")}
             </Button>
           </a>
           <a href='https://videogames-pi.vercel.app'>
             <Button variant="contained" startIcon={<ForwardIcon/>}>
-              Sitio Web
+              {language==="ES"?("Sitio Web"):("Web Site")}
             </Button>
           </a>
         </div>
@@ -49,8 +64,9 @@ export default function About() {
         </CardContent></Card>
         <Card><CardContent>
         <div className='proyect_div'>
-        <img src={require('../img/se_landing.png')} alt="ServiExpressApp"/>
+        <img src={require('../img/se_landing.png')} alt="ServiExpressApp" className="proyect_image"/>
         <div className='proyect_detail'>
+          {language==="ES"?(<div>
           <h2>ServiExpress</h2>
           <p>Proyecto final grupal para el bootcamp Henry.
           <br/> Esta plataforma permite a los usuarios ofrecer y contratar servicios, incluyendo: 
@@ -58,21 +74,34 @@ export default function About() {
           <ul>
             <li>Filtrar los servicios por categoria, precio y ubicacion,</li>
             <li>Buscarlos por nombre,</li>
-            <li>Registrarse y loguearse como usuario</li>
+            <li>Registrarse y loguearse como usuario,</li>
             <li>Publicar y modificar servicios,</li>
-            <li>Contratar servicios y pagarlos mediante tarjeta o Mercado Pago</li>
+            <li>Contratar servicios y pagarlos mediante tarjeta o Mercado Pago,</li>
             <li>Chatear con otros usuarios</li>
             <li>Comunicarse con soporte de usuario</li>
           </ul>
+          </div>):(<div>
+            <h2>ServiExpress</h2>
+          <p>Final project made for the Henry bootcamp.
+          <br/>This platform allows users to offer and hire services, including: 
+          </p>
+          <ul>
+            <li>Filter services by category, price and location,</li>
+            <li>Search by name,</li>
+            <li>Register and sign in as User,</li>
+            <li>Publish and modify services,</li>
+            <li>Hire services and pay for them using card or Mercado Pago,</li>
+            <li>Chat with other users,</li>
+            <li>Comunicating with user support</li>
+          </ul>
+          </div>)}
           <a href='https://github.com/camiFK/ProyectoGrupal'>
             <Button variant="contained" startIcon={<GitHubIcon/>}>
-              Repositorio
-            </Button>
+            {language==="ES"?("Repositorio"):("Repository")}            </Button>
           </a>
           <a href='https://serviexpress-client.vercel.app/'>
             <Button variant="contained" startIcon={<ForwardIcon/>}>
-              Sitio Web
-            </Button>
+            {language==="ES"?("Sitio Web"):("Web Site")}            </Button>
           </a>
         </div>
         <ImageCarousel images={serviexpress}/>

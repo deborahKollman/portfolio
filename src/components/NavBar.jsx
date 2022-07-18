@@ -3,48 +3,35 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 // import CssBaseline from '@mui/material/CssBaseline';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Slide from '@mui/material/Slide';
+import HideOnScroll from './sub-components/HideOnScroll';
 import Divider from '@mui/material/Divider';
+import Menu from './sub-components/Menu';
+import { useSelector } from 'react-redux';
 import './styles/NavBar.scss'
-
-function HideOnScroll(props) {
-  const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
-
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
 
 
 export default function NavBar(props) {
   
+  const language = useSelector((state)=>state.language)
+
   return (
     <React.Fragment>
       <HideOnScroll {...props}>
         <AppBar>
           <Toolbar className='nav-bar'>
             <div>
-                <a href='#back-to-top-anchor'>Home</a>
+                <a href='#back-to-top-anchor'><p>Home</p></a>
                 <Divider orientation="vertical" variant="middle" flexItem />
-                <a href='#proyects'>Proyectos</a>
+                <a href='#proyects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Proyects</p>)}</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
-                <a href='#skills'>Habilidades</a>
+                <a href='#skills'>{language==="ES"?(<p lang='es'>Habilidades</p>):(<p lang='en'>Skills</p>)}</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
-                <a href='#contact'>Contacto</a>
+                <a href='#contact'>{language==="ES"?(<p lang='es'>Contacto</p>):(<p lang='en'>Contact</p>)}</a>
             </div>
             <div>
                 {/* <div>Light Dark mode</div>
-                <Divider orientation="vertical" flexItem />
-                <div>Lenguaje</div> */}
+                <Divider orientation="vertical" flexItem /> */}
+                <Menu/>
             </div>
           </Toolbar>
         </AppBar>

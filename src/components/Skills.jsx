@@ -1,10 +1,14 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import './styles/Skills.scss';
 
 export default function About() {
+
+  const language = useSelector((state)=>state.language)
+  
   return (
     <div className='skills' id='skills'>
-      <h1>Habilidades</h1>
+      {language==="ES"?(<h1>Habilidades</h1>):(<h1>Skills</h1>)}
       <div className='icons'>
         <img src={require('.././img/javascript_icon.png')} alt='javascript'/>
         <img src={require('.././img/html5_icon.png')} alt='html'/>

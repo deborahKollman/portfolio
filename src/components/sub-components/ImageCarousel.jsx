@@ -1,10 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-// import image from '../../img/vg_create.png';
 import './Carousel.scss';
 
 export default function ImageCarousel(props){
-    console.log(props)
     return(
         <div className='carousel'>
         <Carousel>

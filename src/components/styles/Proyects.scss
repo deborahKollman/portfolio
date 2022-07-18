@@ -36,7 +36,7 @@
     margin-top:5vh;
     margin-bottom: 5vh;
     align-items: center;
-    img{
+    .proyect_image{
         display: none;
         @media screen and (max-width:770px) {
             display: flex;
