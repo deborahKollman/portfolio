@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArticleIcon from '@mui/icons-material/Article';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import './styles/About.scss';
 
 export default function About() {
