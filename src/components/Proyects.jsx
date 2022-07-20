@@ -19,7 +19,7 @@ export default function About() {
 
   return (
     <React.Fragment>
-      <div className='proyects' maxWidth='xl' id='proyects'>
+      <div maxWidth='xl' id='proyects'>
         {language==="ES"?(<h1>Proyectos</h1>):<h1>Proyects</h1>}
         <Card><CardContent>
         <div className='proyect_div'>

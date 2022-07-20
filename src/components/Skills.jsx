@@ -7,7 +7,7 @@ export default function About() {
   const language = useSelector((state)=>state.language)
   
   return (
-    <div className='skills' id='skills'>
+    <div id='skills'>
       {language==="ES"?(<h1>Habilidades</h1>):(<h1>Skills</h1>)}
       <div className='skill_icons'>
         <img src={require('.././img/javascript_icon.png')} alt='javascript'/>
