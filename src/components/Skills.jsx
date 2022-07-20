@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div className='skills' id='skills'>
       {language==="ES"?(<h1>Habilidades</h1>):(<h1>Skills</h1>)}
-      <div className='icons'>
+      <div className='skill_icons'>
         <img src={require('.././img/javascript_icon.png')} alt='javascript'/>
         <img src={require('.././img/html5_icon.png')} alt='html'/>
         <img src={require('.././img/css3_icon.png')} alt='css'/>

@@ -5,9 +5,11 @@ import HideOnScroll from './sub-components/HideOnScroll';
 import Divider from '@mui/material/Divider';
 import Menu from './sub-components/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import { useSelector } from 'react-redux';
 import './styles/NavBar.scss'
@@ -16,7 +18,7 @@ import './styles/NavBar.scss'
 export default function NavBar(props) {
   
   const language = useSelector((state)=>state.language)
-  const matches = useMediaQuery('(min-width:600px)');
+  const matches = useMediaQuery('(min-width:480px)');
   const [state, setState] = React.useState({left:false})
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -53,35 +55,50 @@ export default function NavBar(props) {
           </Toolbar>
         </AppBar>
       </HideOnScroll>):(
-      <SwipeableDrawer
-        anchor={'left'}
-        open={state.left}
-        onClose={toggleDrawer('left', false)}
-        onOpen={toggleDrawer('left', true)}
-      >
-        <List
-         onClick={toggleDrawer('left', false)}
-         onKeyDown={toggleDrawer('left', false)}>
-          <ListItem>
-            <a href='#back-to-top-anchor'><p>Home</p></a>
-          </ListItem>
-          <ListItem>
-          <a href='#proyects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Proyects</p>)}</a>
-          </ListItem>
-          <ListItem>
-          <a href='#skills'>{language==="ES"?(<p lang='es'>Habilidades</p>):(<p lang='en'>Skills</p>)}</a>
-          </ListItem>
-          <ListItem>
-          <a href='#contact'>{language==="ES"?(<p lang='es'>Contacto</p>):(<p lang='en'>Contact</p>)}</a>
-          </ListItem>
-        </List>
-        <Divider/>
-        <List>
-          <ListItem>
-            <Menu/>
-          </ListItem>
-        </List>
-      </SwipeableDrawer>)}
+      <AppBar position="static">
+        <Toolbar style={{backgroundColor:"#002790"}}>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            onClick={toggleDrawer('left', true)}
+          >
+          <MenuIcon />
+          </IconButton>
+          <Drawer
+            anchor={'left'}
+            open={state.left}
+            onClose={toggleDrawer('left', false)}
+          >
+            <List
+            onClick={toggleDrawer('left', false)}
+            onKeyDown={toggleDrawer('left', false)}>
+              <ListItem>
+                <a href='#back-to-top-anchor'><p>Home</p></a>
+              </ListItem>
+              <ListItem>
+              <a href='#proyects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Proyects</p>)}</a>
+              </ListItem>
+              <ListItem>
+              <a href='#skills'>{language==="ES"?(<p lang='es'>Habilidades</p>):(<p lang='en'>Skills</p>)}</a>
+              </ListItem>
+              <ListItem>
+              <a href='#contact'>{language==="ES"?(<p lang='es'>Contacto</p>):(<p lang='en'>Contact</p>)}</a>
+              </ListItem>
+            </List>
+            <Divider/>
+            <List>
+              <ListItem>
+                <Menu/>
+              </ListItem>
+            </List>
+          </Drawer>
+        </Toolbar>
+      </AppBar>
+      
+      )}
     </React.Fragment>
   );
 }

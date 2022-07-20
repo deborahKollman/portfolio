@@ -37,25 +37,18 @@
     margin-bottom: 5vh;
     align-items: center;
     .proyect_image{
-        display: none;
-        @media screen and (max-width:770px) {
-            display: flex;
-            width: 100vh;
-            border-radius: 10px;
-        }
-        @media screen and (max-width:480px) {
-            width: 60vh;
-        }
+        width: 95%;
+        border-radius: 10px;
     }
 
     @media screen and (max-width:770px){
         margin: 1vh;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 }
 
 .proyect_detail{
-    width: 60%;
+    width: 50%;
     h2{
         font-size: 6vh;
 

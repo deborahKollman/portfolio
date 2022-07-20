@@ -12,7 +12,7 @@
             margin-bottom: 2vh;
         }
         @media screen and (max-width:480px) {
-            font-size: 6vh;
+            font-size: 4vh;
         }
 
     }
@@ -22,20 +22,21 @@
         justify-content: center;
         img{
             padding: 5vh;
-            height: 120px;
-            @media screen and (max-width:770px) {
-                height: 100px;
-            }
+            width: 120px;
             @media screen and (max-width:480px) {
-                height: 80px;
+                width: 100px;
+            }
+            @media screen and (max-width:480px){
+                width: 60px;
+                padding: 2vh;
             }
         }
     }
 
     @media screen and (max-width:770px) {
-        padding: 10vh;
+        padding: 8vh;
     }
     @media screen and (max-width:480px) {
-        padding: 5vh;
+        padding: 3vh;
     }
 }

@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ForwardIcon from '@mui/icons-material/Forward';
 import ImageCarousel from './sub-components/ImageCarousel';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { useSelector } from 'react-redux';
 import './styles/Proyects.scss';
 
@@ -14,6 +15,7 @@ export default function About() {
   const serviexpress = [{url:require('../img/se_landing.png'),alt:'Landing page'},{url:require('../img/se_home.png'),alt:'Homepage'},{url:require('../img/se_detail.png'),alt:'Publication page'},{url:require('../img/se_order.png'),alt:'Order page'}];
   
   const language = useSelector((state)=>state.language)
+  const matches = useMediaQuery('(min-width:770px)');
 
   return (
     <React.Fragment>
@@ -21,7 +23,6 @@ export default function About() {
         {language==="ES"?(<h1>Proyectos</h1>):<h1>Proyects</h1>}
         <Card><CardContent>
         <div className='proyect_div'>
-        <img src={require('../img/vg_landing.png')} alt="VideogamesApp" className="proyect_image"/>
         <div className='proyect_detail'>
           {language==="ES"?(<div>
           <h2>Videogames App</h2>
@@ -59,12 +60,14 @@ export default function About() {
             </Button>
           </a>
         </div>
-        <ImageCarousel images={videogames}/>
+        {matches?(
+        <ImageCarousel images={videogames}/>):(
+        <img src={require('../img/vg_landing.png')} alt="VideogamesApp" className="proyect_image"/>
+        )}
         </div>
         </CardContent></Card>
         <Card><CardContent>
         <div className='proyect_div'>
-        <img src={require('../img/se_landing.png')} alt="ServiExpressApp" className="proyect_image"/>
         <div className='proyect_detail'>
           {language==="ES"?(<div>
           <h2>ServiExpress</h2>
@@ -104,7 +107,10 @@ export default function About() {
             {language==="ES"?("Sitio Web"):("Web Site")}            </Button>
           </a>
         </div>
-        <ImageCarousel images={serviexpress}/>
+        {matches?(
+        <ImageCarousel images={serviexpress}/>):(
+          <img src={require('../img/se_landing.png')} alt="ServiExpressApp" className="proyect_image"/>
+        )}
         </div>
         </CardContent></Card>
       </div>
