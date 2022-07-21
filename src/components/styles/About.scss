@@ -1,24 +1,45 @@
 .about{
-    background-image: linear-gradient(#2972b6,#4ebcff);
     padding: 15vh;
-    color:white;
+    padding-top: 10vh;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     align-content: center;
+    &.light{
+        @extend .about;
+        background-image: linear-gradient(#2972b6,#4ebcff);
+        color:white;
+    }
+    &.dark{
+        @extend .about;
+        background-image: linear-gradient(#001d4f,#002790);
+        color:white;
+    }
+
     h1{
         font-size: 12vh;
         padding-bottom: 1vh;
-        color: white;
-        text-shadow: 2px 2px 2px #001d4f;
+        &.light{
+            color: white;
+            text-shadow: 2px 2px 2px #001d4f;
+        }
+        &.dark{
+            color: white;
+            text-shadow: 2px 2px 2px #2972b6
+        }
 
         @media screen and (max-width:480px) {
             font-size: 6vh;
         }
     }
     h2{
-        color: #001d4f;
+        &.light{
+            color: #001d4f;
+        }
+        &.dark{
+            color: #4ebcff;
+        }
         @media screen and (max-width:770px){
             font-size: 4vh;
         }
@@ -44,7 +65,14 @@
             margin-left: 5vh;
     
             .MuiButton-root{
-                background-color: #001d4f;
+                &.light{
+                    @extend .MuiButton-root;
+                    background-color: #001d4f;
+                }
+                &.dark{
+                    @extend .MuiButton-root;
+                    background-color: #2972b6;
+                }
                 @media screen and (max-width:770px) {
                     font-size: 4vh;
                 }
@@ -53,7 +81,14 @@
                 }
             }
             .MuiButton-root:hover{
-                background-color: #0027b6;
+                &.light{
+                    @extend .MuiButton-root;
+                    background-color: #0027b6;
+                }
+                &.dark{
+                    @extend .MuiButton-root;
+                    background-color: #001d4f;
+                }
                 @media screen and (max-width:770px) {
                     font-size: 4vh;
                 }

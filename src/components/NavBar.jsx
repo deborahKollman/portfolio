@@ -10,16 +10,20 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-
-import { useSelector } from 'react-redux';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeLight } from '../redux/actions/index.js'
 import './styles/NavBar.scss'
 
 
 export default function NavBar(props) {
   
   const language = useSelector((state)=>state.language)
+  const light_mode = useSelector((state)=>state.light_mode)
   const matches = useMediaQuery('(min-width:480px)');
   const [state, setState] = React.useState({left:false})
+  const dispatch = useDispatch();
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -32,6 +36,10 @@ export default function NavBar(props) {
 
     setState({ ...state, [anchor]: open });
   };
+
+  const handleLightChange = ()=>{
+    dispatch(changeLight());
+  } 
 
   return (
     <React.Fragment>
@@ -48,14 +56,16 @@ export default function NavBar(props) {
                 <a href='#contact'>{language==="ES"?(<p lang='es'>Contacto</p>):(<p lang='en'>Contact</p>)}</a>
             </div>
             <div>
-                {/* <div>Light Dark mode</div>
-                <Divider orientation="vertical" flexItem /> */}
+                <IconButton onClick={handleLightChange}>
+                  {light_mode?(<LightModeIcon style={{color:"yellow"}}/>):(<DarkModeIcon style={{color:"white"}}/>)}
+                </IconButton>
+                <Divider orientation="vertical" flexItem />
                 <Menu/>
             </div>
           </Toolbar>
         </AppBar>
       </HideOnScroll>):(
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar style={{backgroundColor:"#002790"}}>
           <IconButton
             size="large"
@@ -92,6 +102,11 @@ export default function NavBar(props) {
             <List>
               <ListItem>
                 <Menu/>
+              </ListItem>
+              <ListItem>
+                <IconButton onClick={handleLightChange}>
+                  {light_mode?(<LightModeIcon style={{color:"orange"}}/>):(<DarkModeIcon style={{color:"black"}}/>)}
+                </IconButton>
               </ListItem>
             </List>
           </Drawer>

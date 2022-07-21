@@ -6,6 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ForwardIcon from '@mui/icons-material/Forward';
 import ImageCarousel from './sub-components/ImageCarousel';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Toolbar from '@mui/material/Toolbar';
 import { useSelector } from 'react-redux';
 import './styles/Proyects.scss';
 
@@ -14,22 +15,24 @@ export default function About() {
   const videogames = [{url:require('../img/vg_landing.png'),alt:'Landing page'},{url:require('../img/vg_search.png'),alt:'Search, filter, order'},{url:require('../img/vg_detail.png'),alt:'Videogame detail page'},{url:require('../img/vg_create.png'),alt:'Create videogame'}];
   const serviexpress = [{url:require('../img/se_landing.png'),alt:'Landing page'},{url:require('../img/se_home.png'),alt:'Homepage'},{url:require('../img/se_detail.png'),alt:'Publication page'},{url:require('../img/se_order.png'),alt:'Order page'}];
   
-  const language = useSelector((state)=>state.language)
+  const language = useSelector((state)=>state.language);
+  const light_mode = useSelector((state)=>state.light_mode);
   const matches = useMediaQuery('(min-width:770px)');
 
   return (
     <React.Fragment>
-      <div maxWidth='xl' id='proyects'>
-        {language==="ES"?(<h1>Proyectos</h1>):<h1>Proyects</h1>}
-        <Card><CardContent>
+      <div maxWidth='xl' className={`proyects ${light_mode?"light":"dark"}`} >
+      <Toolbar  style={{backgroundColor:"transparent"}} id='proyects'/>
+        {language==="ES"?(<h1 className={light_mode?"light":"dark"}>Proyectos</h1>):<h1 className={light_mode?"light":"dark"}>Proyects</h1>}
+        <Card className={light_mode?"light":"dark"}><CardContent>
         <div className='proyect_div'>
         <div className='proyect_detail'>
           {language==="ES"?(<div>
-          <h2>Videogames App</h2>
-          <p>Proyecto individual creado para el bootcamp Henry.
+          <h2 className={light_mode?"light":"dark"}>Videogames App</h2>
+          <p className={light_mode?"light":"dark"}>Proyecto individual creado para el bootcamp Henry.
           <br/> Esta SPA (Single Page Application) permite visualizar videojuegos e interactuar con ellos, incluyendo:
           </p>
-          <ul>
+          <ul className={light_mode?"light":"dark"}>
             <li>Filtrarlos por genero y tipo (creado o preexistente),</li>
             <li>Ordenarlos por nombre o puntuacion,</li>
             <li>Buscarlos por nombre,</li>
@@ -37,11 +40,11 @@ export default function About() {
             <li>Crear videojuegos para poder ser visualizados en la pagina.</li>
           </ul>
           </div>):(<div>
-            <h2>Videogames App</h2>
-          <p>Individual project made for the Henry bootcamp.
+            <h2 className={light_mode?"light":"dark"}>Videogames App</h2>
+          <p className={light_mode?"light":"dark"}>Individual project made for the Henry bootcamp.
           <br/> This SPA (Single Page Application) allows viewing videogames and interacting with them, including:
           </p>
-          <ul>
+          <ul className={light_mode?"light":"dark"}>
             <li>Filter by gender and type (created or preexisting),</li>
             <li>Order by name or rating,</li>
             <li>Search by name,</li>
@@ -66,15 +69,15 @@ export default function About() {
         )}
         </div>
         </CardContent></Card>
-        <Card><CardContent>
+        <Card className={light_mode?"light":"dark"}><CardContent>
         <div className='proyect_div'>
         <div className='proyect_detail'>
           {language==="ES"?(<div>
-          <h2>ServiExpress</h2>
-          <p>Proyecto final grupal para el bootcamp Henry.
+          <h2 className={light_mode?"light":"dark"}>ServiExpress</h2>
+          <p className={light_mode?"light":"dark"}>Proyecto final grupal para el bootcamp Henry.
           <br/> Esta plataforma permite a los usuarios ofrecer y contratar servicios, incluyendo: 
           </p>
-          <ul>
+          <ul className={light_mode?"light":"dark"}>
             <li>Filtrar los servicios por categoria, precio y ubicacion,</li>
             <li>Buscarlos por nombre,</li>
             <li>Registrarse y loguearse como usuario,</li>
@@ -84,11 +87,11 @@ export default function About() {
             <li>Comunicarse con soporte de usuario</li>
           </ul>
           </div>):(<div>
-            <h2>ServiExpress</h2>
-          <p>Final project made for the Henry bootcamp.
+            <h2 className={light_mode?"light":"dark"}>ServiExpress</h2>
+          <p className={light_mode?"light":"dark"}>Final project made for the Henry bootcamp.
           <br/>This platform allows users to offer and hire services, including: 
           </p>
-          <ul>
+          <ul className={light_mode?"light":"dark"}>
             <li>Filter services by category, price and location,</li>
             <li>Search by name,</li>
             <li>Register and sign in as User,</li>

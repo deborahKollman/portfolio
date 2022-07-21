@@ -4,10 +4,11 @@ import './styles/Contact.scss';
 
 export default function About() {
   
-  const language = useSelector((state)=>state.language)
+  const language = useSelector((state)=>state.language);
+  const light_mode = useSelector((state)=>state.light_mode);
 
   return (
-    <div id='contact'>
+    <div id='contact' className={`${light_mode?"light":"dark"}`}>
         {language==="ES"?(<h1>Contacto</h1>):(<h1>Contact</h1>)}
         <div className='icons'>
             <a href='https://www.linkedin.com/in/deborah-anahi-kollman/'><img src={require('.././img/linkedin_icon.png')} alt='linkedin'/></a>

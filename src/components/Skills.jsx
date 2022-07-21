@@ -1,13 +1,16 @@
 import * as React from 'react';
+import Toolbar from '@mui/material/Toolbar';
 import { useSelector } from 'react-redux';
 import './styles/Skills.scss';
 
 export default function About() {
 
-  const language = useSelector((state)=>state.language)
+  const language = useSelector((state)=>state.language);
+  const light_mode = useSelector((state)=>state.light_mode);
   
   return (
-    <div id='skills'>
+    <div className={`skills ${light_mode?"light":"dark"}`}>
+      <Toolbar id='skills' style={{backgroundColor:"transparent"}}/>
       {language==="ES"?(<h1>Habilidades</h1>):(<h1>Skills</h1>)}
       <div className='skill_icons'>
         <img src={require('.././img/javascript_icon.png')} alt='javascript'/>

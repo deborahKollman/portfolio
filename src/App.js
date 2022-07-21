@@ -6,11 +6,13 @@ import About from './components/About';
 import Proyect from './components/Proyects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import Toolbar from '@mui/material/Toolbar';
 
 function App() {
   return (
     <React.Fragment>
       <NavBar/>
+      <Toolbar id="back-to-top-anchor"/>
       <About/>
       <Proyect/>
       <Skills/>
