@@ -40,7 +40,7 @@ export default function About() {
             {language==="ES"?("Repositorio"):("Repository")}
           </Button>
         </a>
-        <a href='src\documents\Deborah Anahi Kollman - CV - Full Stack Web Developer.pdf' download>
+        <a href={language==='ES'?('./Deborah Anahi Kollman - CV - Full Stack Web Developer.pdf'):('./Deborah Anahi Kollman - CV - Full Stack Web Developer (EN).pdf')} download>
           <Button variant="contained" startIcon={<ArticleIcon/>} className={light_mode?"light":"dark"}>
             {language==="ES"?("Descargar curriculum"):("Download resume")}
           </Button>
