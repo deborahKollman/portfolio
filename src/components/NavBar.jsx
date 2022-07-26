@@ -47,7 +47,7 @@ export default function NavBar(props) {
         <AppBar>
           <Toolbar className='nav-bar'>
             <div>
-                <a href='#back-to-top-anchor'><p>Home</p></a>
+                <a href='#back-to-top-anchor'>{language==="ES"?(<p lang='es'>Acerca de mi</p>):(<p lang='en'>About me</p>)}</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
                 <a href='#proyects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Proyects</p>)}</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
