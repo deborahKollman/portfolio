@@ -86,7 +86,7 @@ export default function NavBar(props) {
             onClick={toggleDrawer('left', false)}
             onKeyDown={toggleDrawer('left', false)}>
               <ListItem>
-                <a href='#back-to-top-anchor'><p>Home</p></a>
+                <a href='#back-to-top-anchor'>{language==="ES"?(<p lang='es'>Acerca de mi</p>):(<p lang='en'>About me</p>)}</a>
               </ListItem>
               <ListItem>
               <a href='#proyects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Proyects</p>)}</a>
