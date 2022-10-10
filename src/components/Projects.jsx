@@ -8,7 +8,7 @@ import ImageCarousel from './sub-components/ImageCarousel';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Toolbar from '@mui/material/Toolbar';
 import { useSelector } from 'react-redux';
-import './styles/Proyects.scss';
+import './styles/Projects.scss';
 
 
 export default function About() {
@@ -21,12 +21,12 @@ export default function About() {
 
   return (
     <React.Fragment>
-      <div maxWidth='xl' className={`proyects ${light_mode?"light":"dark"}`} >
-      <Toolbar  style={{backgroundColor:"transparent"}} id='proyects'/>
-        {language==="ES"?(<h1 className={light_mode?"light":"dark"}>Proyectos</h1>):<h1 className={light_mode?"light":"dark"}>Proyects</h1>}
+      <div maxWidth='xl' className={`projects ${light_mode?"light":"dark"}`} >
+      <Toolbar  style={{backgroundColor:"transparent"}} id='projects'/>
+        {language==="ES"?(<h1 className={light_mode?"light":"dark"}>Proyectos</h1>):<h1 className={light_mode?"light":"dark"}>Projects</h1>}
         <Card className={light_mode?"light":"dark"}><CardContent>
-        <div className='proyect_div'>
-        <div className='proyect_detail'>
+        <div className='project_div'>
+        <div className='project_detail'>
           {language==="ES"?(<div>
           <h2 className={light_mode?"light":"dark"}>Videogames App</h2>
           <p className={light_mode?"light":"dark"}>Proyecto individual creado para el bootcamp Henry.
@@ -65,13 +65,13 @@ export default function About() {
         </div>
         {matches?(
         <ImageCarousel images={videogames}/>):(
-        <img src={require('../img/vg_landing.png')} alt="VideogamesApp" className="proyect_image"/>
+        <img src={require('../img/vg_landing.png')} alt="VideogamesApp" className="project_image"/>
         )}
         </div>
         </CardContent></Card>
         <Card className={light_mode?"light":"dark"}><CardContent>
-        <div className='proyect_div'>
-        <div className='proyect_detail'>
+        <div className='project_div'>
+        <div className='project_detail'>
           {language==="ES"?(<div>
           <h2 className={light_mode?"light":"dark"}>ServiExpress</h2>
           <p className={light_mode?"light":"dark"}>Proyecto final grupal para el bootcamp Henry.
@@ -112,7 +112,7 @@ export default function About() {
         </div>
         {matches?(
         <ImageCarousel images={serviexpress}/>):(
-          <img src={require('../img/se_landing.png')} alt="ServiExpressApp" className="proyect_image"/>
+          <img src={require('../img/se_landing.png')} alt="ServiExpressApp" className="project_image"/>
         )}
         </div>
         </CardContent></Card>

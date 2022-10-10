@@ -47,9 +47,9 @@ export default function NavBar(props) {
         <AppBar>
           <Toolbar className='nav-bar'>
             <div>
-                <a href='#back-to-top-anchor'>{language==="ES"?(<p lang='es'>Acerca de mi</p>):(<p lang='en'>About me</p>)}</a>
+                <a href='#about'>{language==="ES"?(<p lang='es'>Acerca de mi</p>):(<p lang='en'>About me</p>)}</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
-                <a href='#proyects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Proyects</p>)}</a>
+                <a href='#projects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Projects</p>)}</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
                 <a href='#skills'>{language==="ES"?(<p lang='es'>Habilidades</p>):(<p lang='en'>Skills</p>)}</a>
                 <Divider orientation="vertical" variant="middle" flexItem />
@@ -57,7 +57,7 @@ export default function NavBar(props) {
             </div>
             <div>
                 <IconButton onClick={handleLightChange}>
-                  {light_mode?(<LightModeIcon style={{color:"yellow"}}/>):(<DarkModeIcon style={{color:"white"}}/>)}
+                  {!light_mode?(<LightModeIcon style={{color:"yellow"}}/>):(<DarkModeIcon style={{color:"white"}}/>)}
                 </IconButton>
                 <Divider orientation="vertical" flexItem />
                 <Menu/>
@@ -89,7 +89,7 @@ export default function NavBar(props) {
                 <a href='#back-to-top-anchor'>{language==="ES"?(<p lang='es'>Acerca de mi</p>):(<p lang='en'>About me</p>)}</a>
               </ListItem>
               <ListItem>
-              <a href='#proyects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Proyects</p>)}</a>
+              <a href='#projects'>{language==="ES"?(<p lang='es'>Proyectos</p>):(<p lang='en'>Projects</p>)}</a>
               </ListItem>
               <ListItem>
               <a href='#skills'>{language==="ES"?(<p lang='es'>Habilidades</p>):(<p lang='en'>Skills</p>)}</a>
@@ -105,7 +105,7 @@ export default function NavBar(props) {
               </ListItem>
               <ListItem>
                 <IconButton onClick={handleLightChange}>
-                  {light_mode?(<LightModeIcon style={{color:"orange"}}/>):(<DarkModeIcon style={{color:"black"}}/>)}
+                  {!light_mode?(<LightModeIcon style={{color:"orange"}}/>):(<DarkModeIcon style={{color:"black"}}/>)}
                 </IconButton>
               </ListItem>
             </List>

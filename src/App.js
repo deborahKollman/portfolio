@@ -3,7 +3,7 @@ import './App.css';
 import ScrollToTop from './components/ScrollTop';
 import NavBar from './components/NavBar';
 import About from './components/About';
-import Proyect from './components/Proyects';
+import Project from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,9 +12,9 @@ function App() {
   return (
     <React.Fragment>
       <NavBar/>
-      <Toolbar id="back-to-top-anchor"/>
+      <Toolbar id="about"/>
       <About/>
-      <Proyect/>
+      <Project/>
       <Skills/>
       <Contact/>
       <ScrollToTop/>

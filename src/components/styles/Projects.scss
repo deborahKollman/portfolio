@@ -1,13 +1,13 @@
-.proyects{
+.projects{
     
     padding: 5vh 5vh 15vh 5vh;
     font-weight: bold;
     &.light{
-        @extend .proyects;
+        @extend .projects;
         background-image: linear-gradient(white,lightgrey);
     }
     &.dark{
-        @extend .proyects;
+        @extend .projects;
         background-image: linear-gradient(black, black);
     }
     h1{
@@ -49,14 +49,14 @@
     }
 }
 
-.proyect_div{
+.project_div{
     display:flex;
     flex-direction: row-reverse;
     margin-top:5vh;
     margin-bottom: 5vh;
     align-items: center;
     
-    .proyect_image{
+    .project_image{
         width: 95%;
         border-radius: 10px;
     }
@@ -67,7 +67,7 @@
     }
 }
 
-.proyect_detail{
+.project_detail{
     width: 50%;
     h2{
         font-size: 6vh;
